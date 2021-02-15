@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%load static%}
+{%block side_block%}
+        <div class="update">
+            <h3>Update your information</h3>
+            <form method="POST">
+                
+                {{form2.as_p}}
+                {{form1.as_p}}
+
+                {%csrf_token%}
+                 <button id="updateuserbtn" type="submit" class="btn btn-outline-dark">Update</button>
+                 <button id="resetuserbtn" type="reset" class="btn btn-outline-dark">Reset</button>
+                 <a id="deleteuserbtn" class="btn btn-outline-dark" href="/deleteuser/{{request.user.id}}/">Delete Account</a> 
+            </form>
+            
+           
+        </div>
+{%endblock%}

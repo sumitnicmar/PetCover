@@ -1,0 +1,158 @@
+#right {
+    right: 0px;
+    height: 292px;
+    background-color: #ff4c68;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+  }
+#rightdoc{
+    right: 0px;
+    height: 146px;
+    background-color: #ff4c68;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+
+  }
+  
+a {
+    color: #fff;
+  }
+body{
+    background: #fff;
+    font-family: 'Montserrat';
+  }
+  
+.container-fluid{
+    background: black;
+    padding: 20px 20px 10px;
+    
+  }
+  
+.navbar-brand {
+    font-family: 'Ubuntu';
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+
+#test{
+  text-align: center;
+  max-height: 20px;
+  min-width: 300px;
+  padding: 0px 6px 6px 6px;
+  margin-top: 8px;
+  color: rgb(143, 143, 143);
+}
+  
+  /* Appoitment.html */
+ .appointment{
+ 
+  margin-top: 10px;
+  width: 40%;
+  
+ }
+button{
+  margin-left: 30%;
+}
+
+.footer-h3{
+  font-size: 3.5rem;
+}
+
+#footer{
+  font-family: 'Montserrat';
+  text-align: center;
+  background-color: #fff;
+  margin-top: 2%;
+
+}
+
+
+.bottom-icons{
+  color: black;
+  margin: 3% 1% 0.5% 1%;
+
+}
+
+#appointment_history{
+  color: black;
+}
+
+ /* display_allhistory.html */
+table {
+  font-family: 'Montserrat';
+  border-collapse: collapse;
+  width: 40%;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.display_appo{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#cancleappobtn{
+  margin-left: 10%;
+  margin-top: 1%;
+}
+
+#cancleappobtndoc{
+  margin-top: 1%;
+  margin-left: 5%;
+}
+
+#closeappobtndoc{
+  margin-top: 1%;
+  margin-left: 1%;
+}
+
+ /* update */
+.update{
+  margin-top: 10px;
+  width: 40%;
+ }
+
+ #updateuserbtn{
+   margin-left: 10%;
+ }
+ #resetuserbtn{
+  margin-left: 2%
+ }
+
+ #deleteuserbtn{
+  margin-left: 2%;
+ }
+
+ #updatetable td{
+  border: 1px solid #fff;
+  text-align: left;
+  padding: 8px;
+ }
+
+ table {
+  font-family: 'Montserrat';
+  border-collapse: collapse;
+  width: 40%;
+}
+
+#message_updateappointment{
+  margin-top: 5%;
+  margin-left: 15%;
+}
+
+#btn_updateappointment{
+  margin-top: 5%;
+  margin-left: 30%;
+}
+

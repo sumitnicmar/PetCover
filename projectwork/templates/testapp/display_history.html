@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%load extra_tag%}
+{%load static%}
+{%block side_block%}
+    <div class="display_appo">
+        <h3>All appointment history of {{request.user.first_name|title}} {{request.user.last_name|title}}</h3>
+
+        {% if request.user|has_group:"customer" %}
+            <ul>
+            {% for appointment in form %}
+                <li><a id="appointment_history" href="/allhistory/{{appointment.id}}">{{appointment}}</a></li><br>
+            
+            {%endfor%}
+            </ul>
+        {%else%}
+            <ul>
+            {% for appointment in formdoc %}
+                <li><a id="appointment_history" href="/allhistory/{{appointment.id}}">{{appointment}}</a></li><br>
+            {%endfor%}
+            </ul>
+        {%endif%}
+
+    </div>
+        
+{%endblock%}
+

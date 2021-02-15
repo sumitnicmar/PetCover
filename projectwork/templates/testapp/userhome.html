@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+{%extends 'testapp/base.html'%}
+
+{%load extra_tag%}
+{%load static%}
+
+{%block side_block%}
+
+{% if request.user|has_group:"customer" %}
+    <h1>Welcome to PetCover {{request.user.first_name|title}} {{request.user.last_name|title}}</h1>
+{%else%}
+    <h1>Welcome to PetCover Dr. {{request.user.first_name|title}} {{request.user.last_name|title}}</h1>
+{%endif%}
+{%endblock%}

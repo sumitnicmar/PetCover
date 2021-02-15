@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%load static%}
+{%block side_block%}
+<div class="appointment">
+    <form method="POST">
+        {{form.as_p}}
+        {%csrf_token%}
+        <button id="btn_updateappointment" type="submit" class="btn btn-outline-dark">Update Appointment</button>
+    </form>   
+</div>
+
+{%endblock%}

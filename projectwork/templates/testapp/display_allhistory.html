@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%load extra_tag%}
+{%load static%}
+{%block side_block%}
+    <div class="display_appo">
+        {% for appointment in form %}
+        <h3>Details of Appointment ID-{{appointment.id}}</h3>
+        <table class="tabble1">
+            <tr>
+                <td>Name of Doctor</td>
+                <td>{{appointment.doctor}}</td>
+            </tr>
+            <tr>
+                <td>Appointment booked by</td>
+                <td>{{appointment.user.first_name|title}} {{appointment.user.last_name|title}}</td>
+            </tr>
+            <tr>
+                <td>Appointment Date</td>
+                <td>{{appointment.date}}</td>
+            </tr>
+            <tr>
+                <td>Appointment Timeslot</td>
+                <td>{{appointment.timeslot}}</td>
+            </tr>
+            <tr>
+                <td>Appointment Status</td>
+                <td>{%if appointment.status == 1 %}
+                        Pending
+                    {%elif appointment.status == 2%}
+                        Closed
+                    {%else%}
+                        Cancelled
+                    {%endif%}</td>
+            </tr>
+        </table>
+        {% if request.user|has_group:"customer" %}
+            {%if appointment.status == 1%}
+            <a id="cancleappobtn" class="btn btn-outline-dark" href="/status/{{appointment.id}}">Cancel Appointment</a>
+            {%endif%}
+        {%else%}
+            <a id="cancleappobtndoc" class="btn btn-outline-dark" href="/status/{{appointment.id}}">Cancel Appointment</a>
+            <a id="closeappobtndoc" class="btn btn-outline-dark" href="/clstatus/{{appointment.id}}">Close Appointment</a>  
+        {%endif%}
+        
+
+        
+        {%endfor%}
+    </div>
+        
+{%endblock%}

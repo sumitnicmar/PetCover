@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%load extra_tag%}
+{%load static%}
+{%block side_block%}
+    <div class="display_appo">
+        <h3>Upcoming Appointment of {{request.user.first_name|title}} {{request.user.last_name|title}}</h3>
+        <ul>
+            {% if request.user|has_group:"customer" %}
+                {% for appointment in form %}
+                <table id="updatetable">
+                    <tr>
+                        <td><li><a id="appointment_history" href="/allhistory/{{appointment.id}}">{{appointment}}</a></li></td>
+                        <td><a class="btn btn-outline-dark" href="/updateappointment/{{appointment.id}}">Update</a></td>
+                        
+                    </tr>
+                </table>   
+                {%endfor%}
+            {%else%}
+                {% for appointment in docform %}
+                <table id="updatetable">
+                    <tr>
+                        <td><li><a id="appointment_history" href="/allhistory/{{appointment.id}}">{{appointment}}</a></li></td>
+                        <td><a class="btn btn-outline-dark" href="/updateappointment/{{appointment.id}}">Update</a></td>
+                    </tr>
+                </table>   
+                {%endfor%}
+
+            {%endif%}
+        </ul>
+    </div>
+        
+{%endblock%}
+

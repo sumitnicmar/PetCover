@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%load static%}
+{%block side_block%}
+
+<div class="appointment">
+    <form method="POST">
+        <h3>Book your Appointment</h3>
+        {{form.as_p}}
+       
+        {%csrf_token%}
+        
+        <button type="submit" class="btn btn-outline-dark">Book Appointment</button>
+    </form>
+</div>
+{%endblock%}
+
+
+
